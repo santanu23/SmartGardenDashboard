@@ -1,20 +1,31 @@
-var static = require('node-static');
+// call the packages we need
+var express    = require('express');        // call express
+var app        = express();                 // define our app using express
+var bodyParser = require('body-parser');
 
-//
-// Create a node-static server to serve the current directory
-//
-var file = new static.Server('.', { cache: 7200, headers: {'X-Hello':'World!'} });
+// configure app to use bodyParser()
+// this will let us get the data from a POST
 
-require('http').createServer(function (request, response) {
-    file.serve(request, response, function (err, res) {
-        if (err) { // An error as occured
-            console.error("> Error serving " + request.url + " - " + err.message);
-            response.writeHead(err.status, err.headers);
-            response.end();
-        } else { // The file was served successfully
-            console.log("> " + request.url + " - " + res.message);
-        }
-    });
-}).listen(8080);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-console.log("> node-static is listening on http://127.0.0.1:8080");
+
+var port = process.env.PORT || 8080;        // set our port
+
+// ROUTES FOR OUR API
+
+var apiRouter = express.Router();              // get an instance of the express Router
+apiRouter.get('/', function(req, res) {
+    res.json({ message: 'hooray! welcome to our api!' });
+});
+
+// more routes for our API will happen here
+
+// REGISTER ROUTES
+app.use('/', express.static(__dirname + '/home'));
+app.use('/dashboard',express.static(__dirname + '/dashboard'));
+app.use('/api', apiRouter);
+// START THE SERVER
+
+app.listen(port);
+console.log('Listening on port ' + port);
