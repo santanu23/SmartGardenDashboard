@@ -7,10 +7,13 @@ A dashboard to monitor sensor data from smart garden
 Requests for Python, follow instructions here:
 http://docs.python-requests.org/en/master/user/install/#install
 
+<<<<<<< HEAD
 ## Architecture
 
 ![Architecture diagram](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/images/Architecture.jpg "Architecture")
 
+=======
+>>>>>>> be26c7394a4855765abbfd028a409fa32fbd8c23
 ## Usage
 
 TODO: Write usage instructions
