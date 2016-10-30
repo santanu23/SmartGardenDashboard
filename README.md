@@ -13,7 +13,7 @@ http://docs.python-requests.org/en/master/user/install/#install
 
 ## Usage
 
-TODO: Write usage instructions
+http://docs.python-requests.org/en/master/user/quickstart/#more-complicated-post-requests
 
 ## Contributing
 
