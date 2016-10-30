@@ -9,7 +9,7 @@ http://docs.python-requests.org/en/master/user/install/#install
 
 ## Architecture
 
-![Architecture diagram](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/images/Architecture.jpg "Architecture")
+![Architecture diagram](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/dashboard/images/Architecture.jpg "Architecture")
 
 ## Usage
 
