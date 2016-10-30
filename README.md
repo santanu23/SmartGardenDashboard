@@ -1,2 +1,36 @@
-# IoTDashboard
-dashboard for IoT demos
+# Smart Garden Dashboad
+
+A dashboard to monitor sensor data from smart garden
+
+## Installation
+
+Requests for Python, follow instructions here:
+http://docs.python-requests.org/en/master/user/install/#install
+
+## Architecture
+
+![Architecture diagram](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/images/Architecture.jpg "Architecture")
+
+## Usage
+
+TODO: Write usage instructions
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
+## History
+
+TODO: Write history
+
+## Credits
+
+https://github.com/smartgardenunpad/smartgardenunpad.github.io
+
+## License
+
+MIT License
