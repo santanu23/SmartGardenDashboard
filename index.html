@@ -3,123 +3,247 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
-
+  <title>SAP Smart Garden</title>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico">
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+<!-- /Loader -->
   <nav class="black" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="SAPlogo" src="images/SAP-Logo.png" width="7%"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img id="SAPlogo" src="images/SAP_2011_logo.svg"></a>
+      <ul class="right hide-on-med-and-down logoText">
+        <li><a href="#">Smart Garden Dashboard</a></li>
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+      <ul id="nav-mobile" class="side-nav logoText">
+        <li><a href="#">Dashboard</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Smart Garden</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
-  </div>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+  
+  <main class="grey lighten-4">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+          <div class="section">
+              <div class="row">
+                    <!-- TODO WIDGET Card Parameter tanaman -->
+                    <div class="col s12">
+                        <div class="center">
+                            <h5 class="grey-text text-darken-2">
+                            Ideal Growth Conditions
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col l3 m6 s6">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img class="responsive-img" src="images/tomato.jpg">
+                                <span class="card-title">Tomatoes</span>
+                            </div>
+                            <div class="card-content" style="padding-top:4px">
+                                Temperature : 24-28°C
+                                <br>Humidity : 80%
+                                <br>Soil Moisture : 50%
+                                <br>Light Intensity : 10.000-30.000 lux
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l3 m6 s6">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img class="responsive-img" src="images/corn.jpg">
+                                <span class="card-title">Corn</span>
+                            </div>
+                            <div class="card-content" style="padding-top:4px">
+                                Temperature : 21-27°C
+                                <br>Humidity : 80%
+                                <br>Soil Moisture : 50%
+                                <br>Light Intensity : 4.250-40.000 lux
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l3 m6 s6">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img class="responsive-img" src="images/strawberry.jpg">
+                                <span class="card-title">Strawberry</span>
+                            </div>
+                            <div class="card-content" style="padding-top:4px">
+                                Temperature : 22-28°C <br>
+                                Humidity : 80-90% <br>
+                                Soil Moisture : 50% <br>
+                                Light Intensity : 20.000-40.000 lux
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l3 m6 s6">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img class="responsive-img" src="images/pepper.jpg">
+                                <span class="card-title">Peppers</span>
+                            </div>
+                            <div class="card-content" style="padding-top:4px">
+                                Temperature : 15-25°C <br>
+                                Humidity : 76-77% <br>
+                                Soil Moisture : 50% <br>
+                                Light Intensity : 2000 - 30.000 lux
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TODO Last update time -->
+                    <div class="col s12">
+                        <div class="center">
+                            <h5 class="grey-text text-darken-2">
+                            Actual Sensor Readings
+                            <span id="last_update_date"></span> <span id="last_update_time" style="font-weight:bold"></span></h5>
+                        </div>
+                    </div>
+
+                    <!-- WIDGET -->
+                    <div class="col m3 s6">
+                        <div class="card orange darken-1">
+                            <span class="white-text" style="margin:8px;font-size:0.9em">Light Intensity</span>
+                            <div class="card-content center" style="padding-top:0px">
+                                <span id="w_lux" class="white-text widget-value">
+                                  <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
+                                </span>
+                                <br>
+                                <span class="white-text widget-unit">Lux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m3 s6">
+                        <div class="card green darken-1">
+                            <span class="white-text" style="margin:8px;font-size:0.9em">Humidity</span>
+                            <div class="card-content center" style="padding-top:0px">
+                                <span id="w_hum" class="white-text widget-value">
+                                  <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
+                                </span>
+                                <br>
+                                <span class="white-text widget-unit">RH</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col m3 s6">
+                        <div class="card red darken-1">
+                            <span class="white-text" style="margin:8px;font-size:0.9em">Temparature</span>
+                            <div class="card-content center" style="padding-top:0px">
+                                <span id="w_temp" class="white-text widget-value">
+                                  <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
+                                </span>
+                                <br>
+                                <span class="white-text widget-unit">°C</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col m3 s6">
+                        <div class="card blue darken-1">
+                            <span class="white-text" style="margin:8px;font-size:0.9em">Tank Water Level</span>
+                            <div class="card-content center" style="padding-top:0px">
+                                <span id="w_soil" class="white-text widget-value">
+                                  <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
+                                </span>
+                                <br>
+                                <span class="white-text widget-unit">m</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 center">
+                        <!-- GRAPH -->
+                        <div class="card">
+                            <div class="card-action">
+                                <span class="card-title activator grey-text text-darken-4">Historical Data<i class="material-icons right tooltipped" data-position="top" data-delay="50" data-tooltip="Settings">settings</i></span>
+                            </div>
+                            <div class="card-content" style="padding-top: 0px;">
+                                <div id="chart-container" style="height: 100%;width:100%;min-width: 310px;">
+                                    <div class="progress orange lighten-5">
+                                        <div class="indeterminate orange lighten-1"></div>
+                                    </div>
+                                    <canvas id="myChart"width="400" height="400"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-reveal">
+                                <div style="margin-bottom:20px;">
+                                    <span class="card-title grey-text text-darken-4">Settings<i class="material-icons right">close</i></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col l3 s12" style="margin-bottom:10px">
+                                        <button class="btn waves-effect waves-light grey darken-3" value="Hide All" name="Hide All Button" onclick="HideAll();">Hide All
+                                        </button>
+                                    </div>
+                                    <div class="col l3 s12" style="margin-bottom:10px">
+                                        <button class="btn waves-effect waves-light blue darken-3" value="Show All" name="Show All Button" onclick="ShowAll();">Show All
+                                        </button>
+                                    </div>                                    
+                                    <div class="col l3 s12" style="margin-bottom:10px;">
+                                        <input class="filled-in" id="Update" name="Update" type="checkbox" checked="checked" />
+                                        <label for="Update" style="margin:0 8px">Realtime</label>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="row">
+                                    <div class="input-field col l4 s12" style="margin-bottom:8px">
+                                        <select id="Channel Select">
+                                            <option value="" disabled selected>Choose your option</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col l4 s12" style="margin-bottom:8px">
+                                        <select id="Loads">
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value="1">1 Load</option>
+                                            <option value="2">2 Loads</option>
+                                            <option value="3">3 Loads</option>
+                                            <option value="4">4 Loads</option>
+                                            <option value="5" selected="selected">5 Loads</option>
+                                            <option value="6">6 Loads</option>
+                                            <option value="7">7 Loads</option>
+                                            <option value="8">8 Loads</option>
+                                            <option value="9">9 Loads</option>
+                                            <option value="10">10 Loads</option>
+                                            <option value="15">15 Loads</option>
+                                            <option value="20">20 Loads</option>
+                                            <option value="25">25 Loads</option>
+                                            <option value="30">30 Loads</option>
+                                            <option value="40">40 Loads</option>
+                                            <option value="50">50 Loads</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <footer class="page-footer black">    
+    <div class="footer-copyright">
+      <div class="container white-text">
+      Made by <a class="orange-text text-lighten-3" href="http://sap.com">SAP</a>
       </div>
     </div>
   </footer>
 
-
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="js/materialize.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/locale/en-ca.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
   <script src="js/init.js"></script>
 
   </body>
