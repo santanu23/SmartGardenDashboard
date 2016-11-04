@@ -123,9 +123,9 @@
                     </div>
                     <div class="col m3 s6">
                         <div class="card green darken-1">
-                            <span class="white-text" style="margin:8px;font-size:0.9em">Humidity</span>
+                            <span class="white-text" style="margin:8px;font-size:0.9em">Moisture</span>
                             <div class="card-content center" style="padding-top:0px">
-                                <span id="w_hum" class="white-text widget-value">
+                                <span id="w_mos" class="white-text widget-value">
                                   <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
                                 </span>
                                 <br>
@@ -151,7 +151,7 @@
                         <div class="card blue darken-1">
                             <span class="white-text" style="margin:8px;font-size:0.9em">Tank Water Level</span>
                             <div class="card-content center" style="padding-top:0px">
-                                <span id="w_soil" class="white-text widget-value">
+                                <span id="w_water" class="white-text widget-value">
                                   <div class="progress orange lighten-5"><div class="indeterminate orange lighten-1"></div></div>
                                 </span>
                                 <br>
@@ -164,67 +164,16 @@
                         <!-- GRAPH -->
                         <div class="card">
                             <div class="card-action">
-                                <span class="card-title activator grey-text text-darken-4">Historical Data<i class="material-icons right tooltipped" data-position="top" data-delay="50" data-tooltip="Settings">settings</i></span>
+                                <span class="card-title activator grey-text text-darken-4">Historical Data</span>
                             </div>
                             <div class="card-content" style="padding-top: 0px;">
                                 <div id="chart-container" style="height: 100%;width:100%;min-width: 310px;">
                                     <div class="progress orange lighten-5">
                                         <div class="indeterminate orange lighten-1"></div>
-                                    </div>
-                                    <canvas id="myChart"width="400" height="400"></canvas>
-                                </div>
-                            </div>
-                            <div class="card-reveal">
-                                <div style="margin-bottom:20px;">
-                                    <span class="card-title grey-text text-darken-4">Settings<i class="material-icons right">close</i></span>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col l3 s12" style="margin-bottom:10px">
-                                        <button class="btn waves-effect waves-light grey darken-3" value="Hide All" name="Hide All Button" onclick="HideAll();">Hide All
-                                        </button>
-                                    </div>
-                                    <div class="col l3 s12" style="margin-bottom:10px">
-                                        <button class="btn waves-effect waves-light blue darken-3" value="Show All" name="Show All Button" onclick="ShowAll();">Show All
-                                        </button>
                                     </div>                                    
-                                    <div class="col l3 s12" style="margin-bottom:10px;">
-                                        <input class="filled-in" id="Update" name="Update" type="checkbox" checked="checked" />
-                                        <label for="Update" style="margin:0 8px">Realtime</label>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="row">
-                                    <div class="input-field col l4 s12" style="margin-bottom:8px">
-                                        <select id="Channel Select">
-                                            <option value="" disabled selected>Choose your option</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col l4 s12" style="margin-bottom:8px">
-                                        <select id="Loads">
-                                            <option value="" disabled selected>Choose your option</option>
-                                            <option value="1">1 Load</option>
-                                            <option value="2">2 Loads</option>
-                                            <option value="3">3 Loads</option>
-                                            <option value="4">4 Loads</option>
-                                            <option value="5" selected="selected">5 Loads</option>
-                                            <option value="6">6 Loads</option>
-                                            <option value="7">7 Loads</option>
-                                            <option value="8">8 Loads</option>
-                                            <option value="9">9 Loads</option>
-                                            <option value="10">10 Loads</option>
-                                            <option value="15">15 Loads</option>
-                                            <option value="20">20 Loads</option>
-                                            <option value="25">25 Loads</option>
-                                            <option value="30">30 Loads</option>
-                                            <option value="40">40 Loads</option>
-                                            <option value="50">50 Loads</option>
-                                        </select>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
               </div>
           </div>
@@ -240,10 +189,10 @@
   </footer>
 
   <!--  Scripts-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/locale/en-ca.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+  <<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.js"></script>
   <script src="js/init.js"></script>
 
   </body>
