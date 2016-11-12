@@ -13,8 +13,7 @@ app.use(bodyParser);
 
 var apiRouter = express.Router(); // get an instance of the express Router
 
-var baseGetUrl = "https://P1942282309:9032822491Pp_@iotmmsp1942282309trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_8IJ3RTA7M5XQSNIBTRTYHEOE5.T_IOT_EA1A61EDC8EA65791306?$format=json" +
-                 "&$select=G_DEVICE,G_CREATED,C_TIMESTAMP,C_LIGHT,C_WATERLEVEL,C_MOISTURE,C_TEMPERATURE,C_DEVICEID";
+var baseGetUrl = "https://api.thingspeak.com/channels.json?api_key=130XDIIHOZ65W7Q6";
 
 var httpsCall = function(url, response){
     https.get(url, (res) => {
@@ -31,28 +30,16 @@ var httpsCall = function(url, response){
     });
 }
 
-apiRouter.get('/', function(request, response) {
-    console.log("GET HANA ALL");
-    httpsCall(baseGetUrl, response);  
+apiRouter.get('/all', function(request, response) {
+    console.log("GET ALL");
+    url = "https://api.thingspeak.com/channels/179370/feed.json?api_key=43JJR329XJJ5WU5I"
+    httpsCall(url, response);  
 });
 
 apiRouter.get('/lastReading', function(request, response) {
-    console.log("GET HANA Last Read");
-    var url = baseGetUrl + "&$orderby=G_CREATED desc&$top=1";
+    console.log("GET Last Read");
+    var url = "https://api.thingspeak.com/channels/179370/feed/last.json?api_key=43JJR329XJJ5WU5I";
     httpsCall(url,response);
-});
-
-apiRouter.post('/', function(req, res) {
-    console.log("HANA POST");
-	var sensorValue = req.body.sensorValue;
-	var sensorType = req.body.sensorType;
-	var deviceName = req.body.deviceName;
-    if (!sensorValue || !sensorType || !deviceName){
-        res.status(500).json({message : 'Input parameters are null'});
-        return;
-    }
-	var timestamp = new Date();
-	var objectToStore = {"sensor":{"type":sensorType,"value":sensorValue},"deviceName": deviceName, "timestamp": timestamp};	
 });
 
 // REGISTER ROUTES
