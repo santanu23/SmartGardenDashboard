@@ -106,25 +106,25 @@ updateGraph = function(){
 					//light
 					if(data.feeds[i].field1){
 						oldDataSet = myLine.config.data.datasets[0].data;
-						newData = {x:data.feeds[i].field1,y:parseFloat(data.feeds[i].field1).toFixed(2)};
+						newData = {x:new Date(data.feeds[i].created_at),y:parseFloat(data.feeds[i].field1).toFixed(2)};
 						oldDataSet.push(newData); 
 			    	}
 			    	//moisture1
 			    	if(data.feeds[i].field2){		
 			    		oldDataSet = myLine.config.data.datasets[1].data;
-						newData = {x:data.feeds[i].field2,y:parseFloat(data.feeds[i].field2).toFixed(2)};
+						newData = {x:new Date(data.feeds[i].created_at),y:parseFloat(data.feeds[i].field2).toFixed(2)};
 						oldDataSet.push(newData);
 			    	}
 			    	//moisture2
 			    	if(data.feeds[i].field3){
 			    		oldDataSet = myLine.config.data.datasets[2].data;
-						newData = {x:data.feeds[i].field3,y:parseFloat(data.feeds[i].field3).toFixed(2)};
+						newData = {x:new Date(data.feeds[i].created_at),y:parseFloat(data.feeds[i].field3).toFixed(2)};
 						oldDataSet.push(newData);
 			    	}
 			    	//waterlevel
 			    	if(data.feeds[i].field4){
 			    		oldDataSet = myLine.config.data.datasets[3].data;
-						newData = {x:data.feeds[i].field4,y:parseFloat(data.feeds[i].field4).toFixed(2)};
+						newData = {x:new Date(data.feeds[i].created_at),y:parseFloat(data.feeds[i].field4).toFixed(2)};
 						oldDataSet.push(newData);
 			    	}
 				}
@@ -137,19 +137,21 @@ updateGraph = function(){
 updateLastReadings = function(){
 	$.get(apiUrl + "/lastReading", function(data, status){
     	if (data){
-    		//temp
+    		//light
 	    	if(data.field1){
-	    		$('#w_temp').text(parseFloat(data.field1).toFixed(2));
+	    		$('#w_lux').text(parseFloat(data.field1).toFixed(2));	    	
 	    	}
-	    	//light
+	    	//moisture 1
 	    	if(data.field2){
-	    		$('#w_lux').text(parseFloat(data.field2).toFixed(2));
+	    		$('#w_mos1').text(parseFloat(data.field2).toFixed(2));
 	    	}
+	    	//moisture 2
 	    	if(data.field3){
-	    		$('#w_veg1').text(parseFloat(data.field3).toFixed(2));
+	    		$('#w_mos2').text(parseFloat(data.field3).toFixed(2));
 	    	}
+	    	//water level
 	    	if(data.field4){
-	    		$('#w_veg2').text(parseFloat(data.field4).toFixed(2));
+	    		$('#w_wlev').text(parseFloat(data.field4).toFixed(2));
 	    	}
     	}
     });	
