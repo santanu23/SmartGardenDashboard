@@ -1,7 +1,6 @@
 // call the packages we need
 var express    = require('express');
 var bodyParser = require('body-parser').json();
-var Server = require('mongodb').Server;
 var assert = require('assert');
 var https = require('https');
 
@@ -9,11 +8,15 @@ var port = process.env.PORT || 8080; // set our port
 
 var app = express(); // define our app using express
 
+var apiWriteKey = 'YRREW6MQXXUEKJG3';
+var apiReadKey = '43JJR329XJJ5WU5I';
+var apiChannelKey = '130XDIIHOZ65W7Q6';
+
 app.use(bodyParser);
 
 var apiRouter = express.Router(); // get an instance of the express Router
 
-var baseGetUrl = "https://api.thingspeak.com/channels.json?api_key=130XDIIHOZ65W7Q6";
+var baseGetUrl = "https://api.thingspeak.com/channels/179370/feed";
 
 var httpsCall = function(url, response){
     https.get(url, (res) => {
@@ -32,19 +35,18 @@ var httpsCall = function(url, response){
 
 apiRouter.get('/all', function(request, response) {
     console.log("GET ALL");
-    url = "https://api.thingspeak.com/channels/179370/feed.json?api_key=43JJR329XJJ5WU5I"
-    httpsCall(url, response);  
+    var queryURL = baseGetUrl + ".json" + "?api_key=" + apiReadKey;
+    httpsCall(queryURL, response);  
 });
 
 apiRouter.get('/lastReading', function(request, response) {
     console.log("GET Last Read");
-    var url = "https://api.thingspeak.com/channels/179370/feed/last.json?api_key=43JJR329XJJ5WU5I";
-    httpsCall(url,response);
+    var queryURL = baseGetUrl + "/last.json" + "?api_key=" + apiReadKey;
+    httpsCall(queryURL,response);
 });
 
 // REGISTER ROUTES
-app.use('/', express.static(__dirname + '/home'));
-app.use('/dashboard',express.static(__dirname + '/dashboard'));
+app.use('/', express.static(__dirname + '/dashboard'));
 app.use('/api', apiRouter);
 // START THE SERVER
 

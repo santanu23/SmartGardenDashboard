@@ -39,6 +39,24 @@ var config = {
 			fill: false,
 			borderColor: "rgba(222, 125, 24, 1)",
 
+		},{
+			label: "Moisture 1",
+			data: [],
+			fill: false,
+			borderColor: "rgba(66, 244, 72, 1)",
+
+		},{
+			label: "Moisture 2",
+			data: [],
+			fill: false,
+			borderColor: "rgba(79, 124, 12, 1)",
+
+		},{
+			label: "Water Level",
+			data: [],
+			fill: false,
+			borderColor: "rgba(11, 151, 226, 1)",
+
 		}] 
 	},
 	options: {
@@ -76,23 +94,38 @@ var config = {
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+//TODO: fix date parsing issue
+
 updateGraph = function(){
 	$.get(apiUrl + "/all", function(data, status){
 		if (data){
 			if (data.feeds){
 				for(var i = 0; i < data.feeds.length; i++){
-					//temp
+					var oldDataSet;
+					var newData;
+					//light
 					if(data.feeds[i].field1){
-						var oldDataSet = myLine.config.data.datasets[0].data;
-						var newData = {x:data.feeds[i].field1,y:parseFloat(data.feeds[i].field1).toFixed(2)};
+						oldDataSet = myLine.config.data.datasets[0].data;
+						newData = {x:data.feeds[i].field1,y:parseFloat(data.feeds[i].field1).toFixed(2)};
 						oldDataSet.push(newData); 
 			    	}
-			    	//light
-			    	if(data.feeds[i].field2){			    		
+			    	//moisture1
+			    	if(data.feeds[i].field2){		
+			    		oldDataSet = myLine.config.data.datasets[1].data;
+						newData = {x:data.feeds[i].field2,y:parseFloat(data.feeds[i].field2).toFixed(2)};
+						oldDataSet.push(newData);
 			    	}
+			    	//moisture2
 			    	if(data.feeds[i].field3){
+			    		oldDataSet = myLine.config.data.datasets[2].data;
+						newData = {x:data.feeds[i].field3,y:parseFloat(data.feeds[i].field3).toFixed(2)};
+						oldDataSet.push(newData);
 			    	}
+			    	//waterlevel
 			    	if(data.feeds[i].field4){
+			    		oldDataSet = myLine.config.data.datasets[3].data;
+						newData = {x:data.feeds[i].field4,y:parseFloat(data.feeds[i].field4).toFixed(2)};
+						oldDataSet.push(newData);
 			    	}
 				}
 				myLine.update();
