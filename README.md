@@ -28,7 +28,7 @@ http://docs.python-requests.org/en/master/user/quickstart/#more-complicated-post
 TODO: Write history
 
 ## Credits
-
+https://github.com/LupenTiJay
 https://github.com/smartgardenunpad/smartgardenunpad.github.io
 
 ## License
