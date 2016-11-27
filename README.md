@@ -4,9 +4,6 @@ A dashboard to monitor sensor data from smart garden
 
 ## Installation
 
-Requests for Python, follow instructions here:
-http://docs.python-requests.org/en/master/user/install/#install
-
 ## Architecture
 
 ![Architecture diagram](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/dashboard/images/Architecture.jpg "Architecture")
