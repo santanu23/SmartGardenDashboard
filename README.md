@@ -2,7 +2,11 @@
 
 A dashboard to monitor sensor data from smart garden
 
-## Installation
+## Screenshots
+
+![Current Readings](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/dashboard/images/1.png "Current Readings")
+
+![Historical Data](https://raw.githubusercontent.com/santanu23/IoTDashboard/master/dashboard/images/2.png "Historical Data")
 
 ## Architecture
 
